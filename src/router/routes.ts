@@ -3,7 +3,8 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('pages/Placeholder.vue'),
+    // component: () => import('pages/Placeholder.vue'),
+    component: () => import('pages/Index.vue'),
     // children: [{ path: '', component: () => import('pages/Index.vue') }],
   },
 

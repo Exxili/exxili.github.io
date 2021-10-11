@@ -1,49 +1,59 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>
+
+  <ScrollComponent style="z-index: 5;" />
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/CompositionComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
+import ScrollComponent from 'src/components/ScrollComponent.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
+  components: { ScrollComponent },
   setup() {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1',
-      },
-      {
-        id: 2,
-        content: 'ct2',
-      },
-      {
-        id: 3,
-        content: 'ct3',
-      },
-      {
-        id: 4,
-        content: 'ct4',
-      },
-      {
-        id: 5,
-        content: 'ct5',
-      },
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
-    return { todos, meta };
+    return { };
   },
 });
 </script>
+
+<style lang="scss">
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  display:block;
+  top:0; bottom:0;
+  left:0; right:0;
+  width:100%; height:100%;
+}
+
+.stars {
+  z-index: 0;
+  background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.twinkling{
+  z-index: 1;
+  background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds{
+  z-index: 2;
+  background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+
+</style>
