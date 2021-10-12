@@ -14,7 +14,8 @@ export default defineComponent({
   name: 'PageIndex',
   components: { ScrollComponent },
   setup() {
-    return { };
+    return {
+    };
   },
 });
 </script>
