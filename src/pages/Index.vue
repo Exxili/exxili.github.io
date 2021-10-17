@@ -3,9 +3,9 @@
   <div class="twinkling"></div>
   <div class="clouds"></div>
 
-  <div id="rocket" class="rocket"></div>
+  <!-- <div id="rocket" class="rocket"></div> -->
 
-  <ScrollComponent style="z-index: 5;" @mousewheel="onMouseWheel" @scroll="onScroll" />
+  <ScrollComponent style="z-index: 5;" @scroll="onScroll" />
 </template>
 
 <script lang="ts">

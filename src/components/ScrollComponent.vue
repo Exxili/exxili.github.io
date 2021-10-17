@@ -1,6 +1,7 @@
 <template>
   <q-scroll-area :bar-style="barStyle" :thumb-style="thumbStyle"
-  style="height: 100vh; max-width: 100vw;">
+  style="height: calc(100vh - 50px); max-width: 100vw;"
+  >
     <!-- <div class="row no-wrap text-white">
       <div v-for="n in 100" :key="n" style="width: 150px" class="q-pa-sm">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.

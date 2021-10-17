@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+  <polygon
+  stroke-width="5"
+  fill="#151515"
+  points="
+  0 0,
+  100 0,
+  100 30,
+  50 10,
+  0 30" />
+</svg>
