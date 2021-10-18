@@ -20,6 +20,9 @@
       <!-- Quasar Framework -->
       <q-img class="grayscale"
       src="~assets/Images/quasarLogo.png" style="height: 50px; width: 50px; margin: 2px"/>
+      <!-- Electron -->
+      <q-img class="grayscale"
+      src="~assets/Images/electronLogo.svg" style="height: 50px; width: 50px; margin: 2px"/>
       <!-- CSharp Logo -->
       <q-img class="grayscale"
       src="~assets/Images/csharpLogo.png" style="height: 50px; width: 50px; margin: 2px"/>
@@ -47,7 +50,30 @@
       src="~assets/Images/gitlabLogo.png" style="height: 50px; width: 50px; margin: 2px;"/>
       <!-- Github -->
       <q-img class="grayscale"
-      src="~assets/Images/githubLogo.png" style="height: 50px; width: 50px; margin: 2px;"/>
+      src="~assets/Images/githubLogo.png"
+      style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- Vue-->
+      <q-img class="grayscale"
+      src="~assets/Images/vueLogo.svg" style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- AWS -->
+      <q-img class="grayscale"
+      src="~assets/Images/awsLogo.png"
+      style="height: 50px; width: 80px; margin: 2px;"/>
+      <!-- DigitalOcean -->
+      <q-img class="grayscale"
+      src="~assets/Images/doLogo.png" style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- Ubuntu -->
+      <q-img class="grayscale"
+      src="~assets/Images/ubuntuLogo.svg" style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- NestJS -->
+      <q-img class="grayscale"
+      src="~assets/Images/nestjsLogo.svg" style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- Serverless Framework -->
+      <q-img class="grayscale"
+      src="~assets/Images/serverlessLogo.svg" style="height: 50px; width: 50px; margin: 2px;"/>
+      <!-- MySql -->
+      <q-img class="grayscale"
+      src="~assets/Images/mysqlLogo.png" style="height: 50px; width: 70px; margin: 2px;"/>
     </div>
   </div>
 </template>

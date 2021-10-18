@@ -2,6 +2,11 @@
   <div class="column justify-center items-center"
   style="background-color: transparent; width: 100vw; height: calc(100vh - 50px);">
 
+  <div class="row text-white">1</div>
+  <div class="row text-white">1</div>
+  <div class="row text-white">1</div>
+  <div class="col">1</div>
+
   <!-- Avatar -->
     <q-avatar class="row" size="250px" bordered>
       <q-img class="col" src="~assets/Images/me.jpg"/>
