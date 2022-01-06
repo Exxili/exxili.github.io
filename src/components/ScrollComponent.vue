@@ -1,6 +1,7 @@
 <template>
   <q-scroll-area
-  ref="scroller"
+  ref="scrollAreaRef"
+  @wheel="onWheel"
   :bar-style="barStyle"
   :thumb-style="thumbStyle"
   style="height: calc(100vh - 50px); max-width: 100vw;"
@@ -12,7 +13,7 @@
         amet esse aspernatur! Iure, doloribus!
       </div>
     </div> -->
-    <div class="row no-wrap">
+    <div ref="abc" class="row no-wrap">
       <HomePage />
       <SkillsPage />
       <HobbiesComponent /> -->
@@ -22,30 +23,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref } from "vue";
 import HomePage from "src/pages/Home.vue";
 import SkillsPage from "src/pages/Skills.vue";
+import { QScrollArea } from "quasar";
 // import HobbiesComponent from "src/components/HobbiesComponent.vue";
 
 function ScrollHandler() {
-  onMounted(() => {
-    // Setup Scrolling to be horizontal
-    const scroller = ref(null);
+  // onMounted(() => {
 
-    console.log("Value", ScrollBoi.value);
+  //   // if (scrollArea.value) {
+  //   // // Add event listener for wheel
+  //   //   scrollArea.value.addEventListener("wheel", (event) => {
+  //   //   // Prevent default behaviour
+  //   //     event.preventDefault();
 
-    // if (scrollArea.value) {
-    // // Add event listener for wheel
-    //   scrollArea.value.addEventListener("wheel", (event) => {
-    //   // Prevent default behaviour
-    //     event.preventDefault();
-
-    //     if (scrollArea.value?.scrollLeft) {
-    //       scrollArea.value.scrollLeft += event.deltaY;
-    //     }
-    //   });
-    // }
-  });
+  //   //     if (scrollArea.value?.scrollLeft) {
+  //   //       scrollArea.value.scrollLeft += event.deltaY;
+  //   //     }
+  //   //   });
+  //   // }
+  // });
 
   return {
   };
@@ -59,7 +57,37 @@ export default defineComponent({
     // HobbiesComponent,
   },
   setup() {
+    const scrollAreaRef = ref<QScrollArea>();
+
+    const onWheel = (event: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const position = event.deltaY * 20;
+      scrollAreaRef.value?.setScrollPosition("horizontal", position, 300);
+    };
+    // Setup Scrolling to be horizontal
+    // const scroller = ref<HTMLElement>();
+    // const abc = ref();
+
+    // onMounted(() => {
+    //   // console.log("scroller", scroller.value);
+    //   // console.log("abc", abc.value);
+
+    //   if (scroller.value) {
+    //     // Add event listener for wheel
+    //     scroller.value.addEventListener("wheel", (event) => {
+    //       // Prevent default behaviour
+    //       event.preventDefault();
+
+    //       if (scroller.value?.scrollLeft) {
+    //         scroller.value.scrollLeft += event.deltaY;
+    //       }
+    //     });
+    //   }
+    // });
+
     return {
+      scrollAreaRef,
+      onWheel,
       ...ScrollHandler(),
       barStyle: {
         zIndex: "0",
