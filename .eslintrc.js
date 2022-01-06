@@ -86,10 +86,13 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'prefer-promise-reject-errors': 'off',
 
+    'linebreak-style': ["error", "windows"],
+
     // TypeScript
-    quotes: ['warn', 'single', { avoidEscape: true }],
+    quotes: ['warn', 'double', { avoidEscape: true }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'

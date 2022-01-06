@@ -79,10 +79,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'Skills',
+  name: "Skills",
   setup() {
     return {
 

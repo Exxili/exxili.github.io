@@ -11,8 +11,8 @@
 <script lang="ts">
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { defineComponent } from 'vue';
-import ScrollComponent from 'src/components/ScrollComponent.vue';
+import { defineComponent } from "vue";
+import ScrollComponent from "src/components/ScrollComponent.vue";
 
 function PageIndexHandler() {
   let left = 0;
@@ -20,9 +20,7 @@ function PageIndexHandler() {
   // let flag = false;
 
   const onScroll = (e: any) => {
-    const element = document.getElementById('rocket');
-
-    console.log(e);
+    const element = document.getElementById("rocket");
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     if (element !== null) {
@@ -31,8 +29,6 @@ function PageIndexHandler() {
       bottom = 200 * Math.sin((Math.PI * e.horizontalPercentage));
 
       // bottom = e.horizontalPercentage * window.innerHeight;
-
-      console.log('left, bottom', left, bottom);
 
       // console.log('flag', flag);
 
@@ -52,8 +48,6 @@ function PageIndexHandler() {
 
       element.style.left = `${left}px`;
       element.style.bottom = `${bottom}px`;
-
-      console.log("bottom", element.style.bottom);
     }
   };
 
@@ -76,7 +70,7 @@ function PageIndexHandler() {
 }
 
 export default defineComponent({
-  name: 'PageIndex',
+  name: "PageIndex",
   components: { ScrollComponent },
   setup() {
     return {
