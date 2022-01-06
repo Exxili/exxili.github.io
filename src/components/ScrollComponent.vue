@@ -16,7 +16,7 @@
     <div ref="abc" class="row no-wrap">
       <HomePage />
       <SkillsPage />
-      <HobbiesComponent /> -->
+      <HobbiesPage />
     </div>
 
   </q-scroll-area>
@@ -26,6 +26,7 @@
 import { defineComponent, ref } from "vue";
 import HomePage from "src/pages/Home.vue";
 import SkillsPage from "src/pages/Skills.vue";
+import HobbiesPage from "src/pages/Hobbies.vue";
 import { QScrollArea } from "quasar";
 // import HobbiesComponent from "src/components/HobbiesComponent.vue";
 
@@ -54,15 +55,25 @@ export default defineComponent({
   components: {
     HomePage,
     SkillsPage,
-    // HobbiesComponent,
+    HobbiesPage,
   },
   setup() {
     const scrollAreaRef = ref<QScrollArea>();
 
     const onWheel = (event: any) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const position = event.deltaY * 20;
-      scrollAreaRef.value?.setScrollPosition("horizontal", position, 300);
+      console.log(event.deltaY);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const amount = event.deltaY <= 0 ? -30 : 30;
+      const left = scrollAreaRef.value?.getScrollPosition().left;
+      console.log(left);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      if (left) {
+        const position = left + amount;
+        console.log("innerWidth", window.innerWidth);
+
+        scrollAreaRef.value?.setScrollPosition("horizontal", position, 1000);
+      }
     };
     // Setup Scrolling to be horizontal
     // const scroller = ref<HTMLElement>();
