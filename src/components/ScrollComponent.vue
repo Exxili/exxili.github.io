@@ -59,21 +59,38 @@ export default defineComponent({
   },
   setup() {
     const scrollAreaRef = ref<QScrollArea>();
+    let position = 0;
 
     const onWheel = (event: any) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(event.deltaY);
+      // console.log(event.deltaY);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const amount = event.deltaY <= 0 ? -30 : 30;
-      const left = scrollAreaRef.value?.getScrollPosition().left;
-      console.log(left);
+      // const amount = event.deltaY <= 0 ? -30 : 30;
+      // const left = scrollAreaRef.value?.getScrollPosition().left;
+      // console.log(left);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      if (left) {
-        const position = left + amount;
-        console.log("innerWidth", window.innerWidth);
+      // if (left) {
+      // const position = left + amount;
+      // console.log("innerWidth", window.innerWidth);
 
-        scrollAreaRef.value?.setScrollPosition("horizontal", position, 1000);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (event.deltaY > 0) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // console.log("deltaY", event.deltaY);
+        position += 10;
+        scrollAreaRef.value?.setScrollPosition("horizontal", position, 10);
+        console.log(scrollAreaRef.value);
+        // console.log("Position", position);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      } else if (event.deltaY < 0) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // console.log("deltaY", event.deltaY);
+        position -= 10;
+        scrollAreaRef.value?.setScrollPosition("horizontal", position, 10);
+        // console.log("Position", position);
       }
+      // console.log(scrollAreaRef.value);
+      // }
     };
     // Setup Scrolling to be horizontal
     // const scroller = ref<HTMLElement>();
